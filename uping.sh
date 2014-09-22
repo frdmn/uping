@@ -31,6 +31,19 @@ function check_reachability(){
         echo "The host \"${1}\" seems to be reachable"
     fi
 }
+
+# Function to continuously ping until its back
+function ping_host() {
+    if ! ping -c 1 ${1} &> /dev/null; then
+        echo -ne "."
+        sleep 1
+        ping_host ${1}
+    else
+        END=$(date +%s.%N) && DIFF=$(echo "$END - $START" | bc)
+        echo -ne "\nThe host \"${1}\" seems to be reachable again, took ${DIFF} ms"
+    fi
+}
+
 ###
 # DO NOT EDIT BELOW
 ###
@@ -52,5 +65,7 @@ if [ ${#} -eq 0 ]; then
     usage
     exit 1
 fi
+
+check_reachability ${1}
 
 exit 0
