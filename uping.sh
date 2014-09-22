@@ -25,7 +25,6 @@ function check_reachability(){
     if ! ping -c 1 -t 1 ${1} &> /dev/null; then
         echo "The host \"${1}\" seems to be unreachable"
         echo -ne "Waiting for host to come back: "
-        START=$(date +%s.%N)
         ping_host ${1}
     else
         echo "The host \"${1}\" seems to be reachable"
@@ -39,8 +38,7 @@ function ping_host() {
         sleep 1
         ping_host ${1}
     else
-        END=$(date +%s.%N) && DIFF=$(echo "$END - $START" | bc)
-        echo -ne "\nThe host \"${1}\" seems to be reachable again, took ${DIFF} ms"
+        echo -ne "\nThe host \"${1}\" seems to be reachable again"
     fi
 }
 
