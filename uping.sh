@@ -38,6 +38,7 @@ function ping_host() {
         sleep 1
         ping_host ${1}
     else
+        echo -ne " ✔"
         echo -ne "\nThe host \"${1}\" seems to be reachable again"
     fi
 }
