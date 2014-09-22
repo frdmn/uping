@@ -29,6 +29,13 @@ if [ "$_" = '-debug' ]; then
     set -x
 fi
 
+# Check if binaries exist
+BINS=( "${BIN_PING}" )
+for BIN in $BINS;
+do
+  type -P $BIN &>/dev/null && continue || echo "'$BIN not found! Run 'apt-get/brew install $BIN' to fix this"; exit 1
+done
+
 # Check for arguments
 if [ ${#} -eq 0 ]; then
     usage
