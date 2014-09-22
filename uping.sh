@@ -20,6 +20,17 @@ OPTIONS
 EOUSAGE
 }
 
+# Function to determine if the host is online
+function check_reachability(){
+    if ! ping -c 1 ${1} &> /dev/null; then
+        echo "The host \"${1}\" seems to be unreachable"
+        echo -ne "Waiting for host to come back: "
+        START=$(date +%s.%N)
+        ping_host ${1}
+    else
+        echo "The host \"${1}\" seems to be reachable"
+    fi
+}
 ###
 # DO NOT EDIT BELOW
 ###
