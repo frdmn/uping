@@ -24,6 +24,7 @@ EOUSAGE
 # DO NOT EDIT BELOW
 ###
 
+# Check for -debug argument
 echo "$@" > /dev/null 2>&1
 if [ "$_" = '-debug' ]; then
     set -x
