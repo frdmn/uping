@@ -22,7 +22,7 @@ EOUSAGE
 
 # Function to determine if the host is online
 function check_reachability(){
-    if ! ping -c 1 ${1} &> /dev/null; then
+    if ! ping -c 1 -t 1 ${1} &> /dev/null; then
         echo "The host \"${1}\" seems to be unreachable"
         echo -ne "Waiting for host to come back: "
         START=$(date +%s.%N)
@@ -34,7 +34,7 @@ function check_reachability(){
 
 # Function to continuously ping until its back
 function ping_host() {
-    if ! ping -c 1 ${1} &> /dev/null; then
+    if ! ping -c 1 -t 1 ${1} &> /dev/null; then
         echo -ne "."
         sleep 1
         ping_host ${1}
