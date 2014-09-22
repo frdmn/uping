@@ -32,8 +32,7 @@ fi
 
 # Check if binaries exist
 BINS=( "${BIN_PING}" )
-for BIN in $BINS;
-do
+for BIN in $BINS; do
   type -P $BIN &>/dev/null && continue || echo "'$BIN not found! Run 'apt-get/brew install $BIN' to fix this"; exit 1
 done
 
