@@ -35,7 +35,6 @@ function check_reachability(){
 function ping_host() {
     if ! ping -c 1 -t 1 ${1} &> /dev/null; then
         echo -ne "."
-        sleep 1
         ping_host ${1}
     else
         echo -ne " ✔"
