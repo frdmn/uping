@@ -27,7 +27,8 @@ function check_reachability(){
         echo -ne "Waiting for host to come back: "
         ping_host ${1}
     else
-        echo "The host \"${1}\" seems to be reachable"
+        echo "The host \"${1}\" seems to be reachable already"
+        send_osx_notification "The host \"${1}\" seems to be reachable already"
     fi
 }
 
@@ -39,6 +40,7 @@ function ping_host() {
     else
         echo -ne " ✔"
         echo -ne "\nThe host \"${1}\" seems to be reachable again"
+        send_osx_notification "The host \"${1}\" seems to be reachable again"
     fi
 }
 
