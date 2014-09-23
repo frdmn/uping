@@ -19,6 +19,16 @@ Waiting for host to come back: ..... ✔
 The host "frd.mn" seems to be reachable again
 ```
 
+##### OS X addition
+
+If you are on OS X and you have [`terminal-notifier`](https://github.com/alloy/terminal-notifier) installed, you get a fancy notification as well:
+
+![](http://up.frd.mn/IgvGA.png)
+
+If you don't have `terminal-notifier`, you can install it using Homebrew:
+
+`brew install terminal-notifier`
+
 ## Installation
 
 1. `cd /usr/local/src`
