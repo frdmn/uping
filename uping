@@ -42,6 +42,14 @@ function ping_host() {
     fi
 }
 
+# Function to send a notification for OS X users
+# If you don't have terminal-notifier: $ brew install terminal-notifier
+function send_osx_notification() {
+    if type -P terminal-notifier &>/dev/null; then
+        terminal-notifier -title uping -message "${1}"
+    fi
+}
+
 ###
 # DO NOT EDIT BELOW
 ###
