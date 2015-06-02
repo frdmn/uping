@@ -42,4 +42,4 @@ If you don't have `terminal-notifier`, you can install it using Homebrew:
 
 ## License
 
-[WTFPL](LICENSE)
+[MIT](LICENSE)
