@@ -34,6 +34,7 @@ function check_reachability(){
 
 # Function to continuously ping until its back
 function ping_host() {
+    trap "exit" INT
     if ! ping -c 1 -t 1 ${1} &> /dev/null; then
         echo -ne "."
         ping_host ${1}
