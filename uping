@@ -34,13 +34,13 @@ function check_reachability(){
 
 # Function to continuously ping until its back
 function ping_host() {
-    trap "exit" INT
+    trap "echo; exit" INT
     if ! ping -c 1 -W 1 ${1} &> /dev/null; then
         echo -ne "."
         ping_host ${1}
     else
         echo -ne " ✔"
-        echo -ne "\nThe host \"${1}\" seems to be reachable again"
+        echo -e "\nThe host \"${1}\" seems to be reachable again"
         send_osx_notification "The host \"${1}\" seems to be reachable again"
     fi
 }
