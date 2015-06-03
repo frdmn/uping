@@ -22,7 +22,7 @@ EOUSAGE
 
 # Function to determine if the host is online
 function check_reachability(){
-    if ! ping -c 1 -t 1 ${1} &> /dev/null; then
+    if ! ping -c 1 -W 1 ${1} &> /dev/null; then
         echo "The host \"${1}\" seems to be unreachable"
         echo -ne "Waiting for host to come back: "
         ping_host ${1}
