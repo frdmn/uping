@@ -31,14 +31,12 @@ If you don't have `terminal-notifier`, you can install it using Homebrew:
 
 ## Installation
 
-1. `cd /usr/local/src`
-2. `git clone git://github.com/frdmn/uping.git`
-3. `ln -s /usr/local/src/uping/uping /usr/bin/uping`
-4. `chmod +x /usr/bin/uping`
+    brew tap frdmn/homebrew-formulas
+    brew install uping
 
 ## Version
 
-0.2.0
+0.2.1
 
 ## License
 
