@@ -3,6 +3,11 @@ uping
 
 _(up)ing_ is a simple Bash script to get notified as soon as a currently offline host is reachable again.
 
+## Installation
+
+    brew tap frdmn/homebrew-formulas
+    brew install uping
+
 ## Usage
 
 `$ uping [hostname] <option>`  
@@ -28,11 +33,6 @@ If you are on OS X and you have [`terminal-notifier`](https://github.com/alloy/t
 If you don't have `terminal-notifier`, you can install it using Homebrew:
 
 `brew install terminal-notifier`
-
-## Installation
-
-    brew tap frdmn/homebrew-formulas
-    brew install uping
 
 ## Version
 
